@@ -1,5 +1,5 @@
 import os
-from models.builder import build_model
+from clip_dinoiser.models.builder import build_model
 from hydra import compose, initialize
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -8,12 +8,12 @@ import torch.nn.functional as F
 import numpy as np
 from operator import itemgetter
 import torch
-from segmentation.datasets.pascal_context import PascalContextDataset
+from clip_dinoiser.segmentation.datasets.pascal_context import PascalContextDataset
 import argparse
-from helpers.visualization import mask2rgb
+from clip_dinoiser.helpers.visualization import mask2rgb
 from typing import List
 
-initialize(config_path="configs", version_base=None)
+initialize(config_path="../configs", version_base=None)
 PALETTE = list(PascalContextDataset.PALETTE)
 
 
