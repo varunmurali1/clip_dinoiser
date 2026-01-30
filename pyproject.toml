@@ -15,7 +15,7 @@ authors = [{name = "CLIP-DINOiser authors"}]
 dependencies = [
   # put the pip-installable subset of requirements.txt here
   # e.g. "torch", "torchvision", "numpy", "opencv-python", ...
-  "ftfy", "omegaconf", "open-clip-torch==2.24", "hydra-core"
+  "ftfy", "omegaconf", "open-clip-torch==2.24", "hydra-core", "opencv-python"
 ]
 
 [project.optional-dependencies]
