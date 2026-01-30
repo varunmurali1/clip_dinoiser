@@ -1,17 +1,21 @@
 import os
-from clip_dinoiser.models.builder import build_model
-from hydra import compose, initialize
-from PIL import Image
+import numpy as np
+import torch
+import argparse
 import matplotlib.pyplot as plt
+
+from typing import List
+from operator import itemgetter
+from PIL import Image
+
+from hydra import compose, initialize
 from torchvision import transforms as T
 import torch.nn.functional as F
-import numpy as np
-from operator import itemgetter
-import torch
-from clip_dinoiser.segmentation.datasets.pascal_context import PascalContextDataset
-import argparse
+
+from clip_dinoiser.models.builder import build_model
 from clip_dinoiser.helpers.visualization import mask2rgb
-from typing import List
+from clip_dinoiser.segmentation.datasets.pascal_context import PascalContextDataset
+
 
 initialize(config_path="../configs", version_base=None)
 PALETTE = list(PascalContextDataset.PALETTE)
