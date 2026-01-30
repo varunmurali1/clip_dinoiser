@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clip-dinoiser"
+version = "0.1.0"
+description = "CLIP-DINOiser: Teaching CLIP a few DINO tricks for open-vocabulary semantic segmentation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [{name = "CLIP-DINOiser authors"}]
+
+# Keep core deps light; heavy deps (mmcv/mmseg) should be extras.
+dependencies = [
+  # put the pip-installable subset of requirements.txt here
+  # e.g. "torch", "torchvision", "numpy", "opencv-python", ...
+  "ftfy", "omegaconf", "open_clip_pytorch==2.24", "hyrda-core"
+]
+
+[project.optional-dependencies]
+mmseg = [
+  # often installed via openmim; keep as documentation / optional
+  # "mmengine",
+  # "mmcv-full==1.6.0",
+  # "mmsegmentation==0.27.0",
+]
+dev = [
+  "pytest>=7",
+  "ruff>=0.5",
+  "mypy>=1.7",
+]
+
+[project.scripts]
+clip-dinoiser-demo = "clip_dinoiser.cli.demo:main"
+clip-dinoiser-train = "clip_dinoiser.cli.train:main"
+clip-dinoiser-eval = "clip_dinoiser.cli.eval:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# If you need to ship non-.py files (configs, assets, etc.)
+[tool.setuptools.package-data]
+clip_dinoiser = [
+  "configs/**/*",
+  "assets/**/*",
+  "checkpoints/**/*",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clip-dinoiser"
+version = "0.1.0"
+description = "CLIP-DINOiser: Teaching CLIP a few DINO tricks for open-vocabulary semantic segmentation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [{name = "CLIP-DINOiser authors"}]
+
+# Keep core deps light; heavy deps (mmcv/mmseg) should be extras.
+dependencies = [
+  # put the pip-installable subset of requirements.txt here
+  # e.g. "torch", "torchvision", "numpy", "opencv-python", ...
+]
+
+[project.optional-dependencies]
+mmseg = [
+  # often installed via openmim; keep as documentation / optional
+  # "mmengine",
+  # "mmcv-full==1.6.0",
+  # "mmsegmentation==0.27.0",
+]
+dev = [
+  "pytest>=7",
+  "ruff>=0.5",
+  "mypy>=1.7",
+]
+
+[project.scripts]
+clip-dinoiser-demo = "clip_dinoiser.cli.demo:main"
+clip-dinoiser-train = "clip_dinoiser.cli.train:main"
+clip-dinoiser-eval = "clip_dinoiser.cli.eval:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# If you need to ship non-.py files (configs, assets, etc.)
+[tool.setuptools.package-data]
+clip_dinoiser = [
+  "configs/**/*",
+  "assets/**/*",
+  "checkpoints/**/*",
+]
+
